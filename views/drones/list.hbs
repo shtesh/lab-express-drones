@@ -1,1 +1,16 @@
 <h2>Available drones</h2>
+//using a forEach loop to display tags
+{{#each drones}}
+<div>
+  <p>Name: {{this.name}}</p>
+  <p>Propellers: {{this.propellers}}</p>
+  <p>Speed: {{this.maxSpeed}}</p>
+  //link to the edit page
+  <a href="/drones/{{this._id}}/edit">Edit</a>
+  /*After clicking on the Delete btn the form should submit to the action route.*/
+  <form action="/drones/{{this._id}}/delete" method="POST">
+    <button>Delete</button>
+  </form>
+  <hr>
+</div>
+{{/each}}
